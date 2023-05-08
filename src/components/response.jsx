@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import TypeText from './type';
 
 const Response = ({ question }) => {
   const [response, setResponse] = useState('');
 
   useEffect(() => {
+    let timeoutId;
+
     if (question) {
       const responses = [
         'It is certain.',
@@ -31,9 +33,16 @@ const Response = ({ question }) => {
 
       const randomIndex = Math.floor(Math.random() * responses.length);
       setResponse(responses[randomIndex]);
-    } else {
-      setResponse(''); // clear response if question is empty
+
+      // Clear the question after 3 seconds
+      timeoutId = setTimeout(() => {
+        setResponse('');
+      }, 3000);
     }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [question]);
 
   return (
@@ -44,5 +53,4 @@ const Response = ({ question }) => {
 };
 
 export default Response;
-
 
