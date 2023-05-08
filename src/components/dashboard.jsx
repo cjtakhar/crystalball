@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Response from './response';
-import TypeText from './type';
 import '../App.css';
 
 const Dashboard = () => {
@@ -14,7 +13,7 @@ const Dashboard = () => {
     return (
       <div className="crystalball">
         <div className="container">
-          <TypeText className="welcome-text" text="Welcome" fontSize="4rem" delay={100} />
+          <h1 className="title">Welcome.</h1>
           <form onSubmit={handleSubmit}>
             <div className="question-container">
               <input type="text" placeholder="Ask a question" className="question-input" name="question" autocomplete="off" />
