@@ -50,6 +50,10 @@ body {
   color: white;
 }
 
+.question-input:focus::placeholder {
+  color: transparent;
+}
+
 .question-btn {
   background:rgba(198, 151, 216, 0.5);
   border: none;

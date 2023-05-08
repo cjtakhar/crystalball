@@ -17,7 +17,7 @@ const Dashboard = () => {
         <h1 className="title">Welcome.</h1>
         <form onSubmit={handleSubmit}>
           <div className="question-container">
-            <input type="text" placeholder="Ask a question" className="question-input" name="question" autoComplete="off" />
+            <input type="text" placeholder="What is your question" className="question-input" name="question" autoComplete="off" />
             <button type="submit" className="question-btn">?</button>
           </div>
         </form>
