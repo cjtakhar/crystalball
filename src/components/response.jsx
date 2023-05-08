@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TypeText from './type';
 
-const Response = ({ question }) => {
+const Response = ({ question, setQuestion }) => {
   const [response, setResponse] = useState('');
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const Response = ({ question }) => {
 
       // Clear the question after 3 seconds
       timeoutId = setTimeout(() => {
+        setQuestion(''); // reset question in Dashboard component
         setResponse('');
       }, 3000);
     }
@@ -43,7 +44,7 @@ const Response = ({ question }) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [question]);
+  }, [question, setQuestion]);
 
   return (
     <div className="answer-container">

@@ -21,7 +21,7 @@ const Dashboard = () => {
             <button type="submit" className="question-btn">?</button>
           </div>
         </form>
-        {question && <Response question={question} />}
+        {question && <Response question={question} setQuestion={setQuestion} />}
       </div>
     </div>
   );
