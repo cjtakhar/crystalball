@@ -9,7 +9,8 @@ const Dashboard = () => {
     event.preventDefault();
     setQuestion(event.target.elements.question.value);
     event.target.elements.question.value = ''; // clear input field
-  };
+    event.target.elements.question.blur(); // blur the input field to hide the keyboard
+  };  
 
   return (
     <div className="crystalball">
